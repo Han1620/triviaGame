@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Game.css";
+import "./Menu.js";
 
 function TriviaGame({ apiUrl }) {
   //new state variables//
@@ -70,7 +71,8 @@ function TriviaGame({ apiUrl }) {
           <p>
             Question {questionCount} of {numQuestions}
           </p>
-          <h2>{question}</h2>
+          {/* check this */}
+          <h2 dangerouslySetInnerHTML={{ __html: question }}></h2>
           <ul>
             {/* map method iterates over the answerOptions array, and creates a li and a button */}
             {answerOptions.map((option) => (
