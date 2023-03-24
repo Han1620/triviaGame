@@ -1,18 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { slide as Slide } from "react-burger-menu";
 import "./Menu.css";
+import Home from "./Home";
 
-function Menu({}) {
+function Menu({ onSelectTopic }) {
+  const [selectedTopic, setSelectedTopic] = useState("");
+
+  function handleTopicSelect(topic) {
+    setSelectedTopic(topic);
+    onSelectTopic(topic);
+  }
   return (
     <div>
-      <Slide>
-        <label>Select a Quiz Topic</label>
-        <Link to="/history">History</Link>
-        <Link to="/music">Music</Link>
-        <Link to="/scienceandnature">Science & Nature</Link>
-        <Link to="/generalknowledge">General Knowledge</Link>
-        <Link to="/geography">Geography</Link>
+      <Slide className="Menu">
+        <Link id="label" to="/">
+          Select a Quiz Topic
+        </Link>
+        <Link to="/history" className="menuItem" onClick={() => handleTopicSelect("History")}>
+          History
+        </Link>
+        <Link to="/music" className="menuItem" onClick={() => handleTopicSelect("Music")}>
+          Music
+        </Link>
+        <Link to="/scienceandnature" className="menuItem" onClick={() => handleTopicSelect("Science &amp; Nature")}>
+          Science &amp; Nature
+        </Link>
+        <Link to="/generalknowledge" className="menuItem" onClick={() => handleTopicSelect("General Knowledge")}>
+          General Knowledge
+        </Link>
+        <Link to="/geography" className="menuItem" onClick={() => handleTopicSelect("Geography")}>
+          Geography
+        </Link>
       </Slide>
     </div>
   );

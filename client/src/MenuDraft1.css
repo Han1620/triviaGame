@@ -1,0 +1,41 @@
+/* Menu.css */
+
+/* Menu styles */
+.Menu {
+  background-color: #fff;
+  font-size: 1.2rem;
+  width: 80%;
+}
+
+/* Menu header styles */
+.Menu h2 {
+  margin: 0 auto;
+  padding: 2em 1em;
+  color: #444;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+/* Menu item styles */
+.Menu a {
+  display: block;
+  padding: 1em;
+  text-transform: uppercase;
+  color: #444;
+  transition: all 0.3s ease-out;
+  transform-origin: center left;
+}
+
+/* Menu item hover styles */
+.Menu a:hover {
+  background-color: #eee;
+  color: #333;
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Selected menu item styles */
+.Menu a.selected {
+  background-color: #eee;
+  color: #333;
+  transform: scale(1.1) rotate(5deg);
+}

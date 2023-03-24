@@ -2,7 +2,22 @@
 @media only screen and (max-width: 600px) {
   .game {
     font-size: 14px;
+    background-color: #f5f5f5;
   }
+}
+@font-face {
+  font-family: "Pretendo";
+  src: url("./Pretendo.ttf");
+}
+
+h1 {
+  font-family: Pretendo;
+  font-weight: 100;
+}
+
+.text {
+  font-family: sans-serif, Arial;
+  font-weight: 600;
 }
 
 body {
@@ -17,12 +32,108 @@ body {
   height: 100vh;
 }
 
-.game {
-  background-color: #fff;
+.gameOver {
+  background-color: white;
+  background-image: linear-gradient(to bottom, yellow, yellow);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  max-width: 800px;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  border: 10px solid rgb(130, 39, 191);
+  /* background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   max-width: 800px;
-  width: 100%;
-  font-size: 16px;
+  width: 90%;
+  margin: auto;
+  text-align: center; */
+}
+
+/* style the "game over" message heading */
+.gameOver h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* style the "game over" message score */
+.gameOver p {
+  font-size: 24px;
+}
+
+.game {
+  background-color: white;
+  background-image: linear-gradient(to bottom, yellow, yellow);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  max-width: 700px;
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  border: 10px solid rgb(130, 39, 191);
+}
+
+/* style the question text */
+.game h2 {
+  margin: 20px 0;
+  font-size: 24px;
+}
+
+/* style the answer options */
+.game ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+/* style the answer option buttons */
+.game button {
+  background-color: rgb(130, 39, 191);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-weight: bold;
+
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+/* style the answer option buttons on hover */
+.game button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* style the score text */
+.game p:last-of-type {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+input {
+  font-family: sans-serif, Arial;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(130, 39, 191);
+  border: 3px solid rgb(130, 39, 191);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 150px;
+  text-align: center;
+  background-color: white;
+}
+
+input:focus {
+  outline: none;
+  border: 3px solid #333;
 }

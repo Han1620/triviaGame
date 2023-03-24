@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Game.css";
-import "./Menu.js";
+import Menu from "./Menu";
 
-function TriviaGame({ apiUrl }) {
+function TriviaGame({ apiUrl, selectedTopic }) {
   //new state variables//
   const [question, setQuestion] = useState("");
   const [answerOptions, setAnswerOptions] = useState([]);
@@ -60,15 +60,17 @@ function TriviaGame({ apiUrl }) {
     // conditional ternary operator, if gameOver is truthy, the first parentheses code will render
     <div className="container">
       {gameOver ? (
-        <div className="game">
+        <div className="gameOver">
           <h1>Game Over</h1>
-          <p>Your final score is: {score}</p>
+          <p>
+            Your final score is: {score} / {numQuestions}
+          </p>
         </div>
       ) : (
         // this code will render if gameOver is falsy
-        <div>
-          <h1>Trivia Game</h1>
-          <p>
+        <div className="game">
+          <h1>{selectedTopic} Quiz</h1>
+          <p className="text">
             Question {questionCount} of {numQuestions}
           </p>
           {/* check this */}
@@ -81,8 +83,8 @@ function TriviaGame({ apiUrl }) {
               </li>
             ))}
           </ul>
-          <p>Score: {score}</p>
-          <label>
+          <p className="text">Score: {score}</p>
+          <label className="text">
             {/* user can select how many questions they can have, max 50. default is 10 */}
             Number of questions:
             <input type="number" min="1" max="50" value={numQuestions} onChange={handleNumQuestionsChange} />
